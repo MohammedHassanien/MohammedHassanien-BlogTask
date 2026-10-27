@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    background-color: snow;
+    min-height: 100vh;
+    padding: 10px 20px;
+}
+
+.Heading {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #222;
+}
+
+.Container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-blogs {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s ease;
+    min-width: 0;
+}
+
+.card-blogs:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.card-blogs img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.card-blogs img:hover {
+    transform: scale(1.04);
+}
+
+
+.Label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background-color: #0878e8;
+    color: white;
+    padding: 5px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+}
+
+
+.card-blogs img + p,
+.card-blogs img + p + p {
+    display: inline-block;
+    font-size: 9px;
+    color: #777;
+    padding: 10px 10px 0;
+}
+
+.card-blogs img + p + p {
+    float: right;
+}
+
+.card-blogs h3 {
+    clear: both;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 10px 12px 0;
+    color: #222;
+}
+
+
+.card-blogs h3 + p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #666;
+    padding: 8px 12px;
+}
+
+
+.card-blogs a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(10, 104, 212);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 12px 12px;
+    transition: 0.3s ease;
+}
+
+.card-blogs a:hover {
+    color: rgb(4, 52, 106);
+}
+
+@media (max-width: 768px) {
+    .Container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .Container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 10px 15px;
+    }
+
+    .card-blogs img {
+        height: 200px;
+    }
+}
